@@ -1,0 +1,7 @@
+{
+    // https://docs.microsoft.com/en-us/azure/static-web-apps/configuration
+    "route": "/publish/*.*",
+    "headers": {
+        "Cache-Control": "public, max-age=900, immutable"
+    }
+}

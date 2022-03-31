@@ -12,11 +12,7 @@ on:
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
-
-# 03/31/2022 10:12 am - SSN
-#    runs-on: ubuntu-latest
-    runs-on: windows-2019
-
+    runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
       - uses: actions/checkout@v2
