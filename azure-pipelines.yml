@@ -16,7 +16,8 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   WebAppName: 'ps-253-wpf-publish-20220403'
-
+# 04/03/2022 05:21 am - SSN - Copied from SamNiyazi2.DevSitesIndex pipeline.
+  connectedServiceName: 'ssn-service-connection--default-web-centralus-20220321'
 
 steps:
 - task: NuGetToolInstaller@1
