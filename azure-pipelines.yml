@@ -12,8 +12,11 @@ pool:
 
 variables:
   solution: '**/*.sln'
+  #RestoreBuildProjects: '**/*.csproj'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  WebAppName: 'ps-253-wpf-publish-20220403'
+
 
 steps:
 - task: NuGetToolInstaller@1
@@ -32,3 +35,31 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+# 04/03/2022 05:14 am - SSN - Added
+- task: DotNetCoreCLI@2
+  displayName: Publish
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
+    zipAfterPublish: True
+  enabled: true
+  
+# 04/03/2022 05:14 am - SSN - Added
+- task: AzureWebApp@1
+  displayName: 'Azure Web App Deploy: $(WebAppName) '
+  inputs:
+    azureSubscription: '$(connectedServiceName)'
+    appType: webApp
+    appName: '$(WebAppName)'
+    package: '$(build.artifactstagingdirectory)/**/*.zip'
+  enabled: true
+
+# 04/03/2022 05:14 am - SSN - Added
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
+  enabled: true
