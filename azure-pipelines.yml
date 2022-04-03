@@ -44,7 +44,9 @@ steps:
     command: 'publish'
     publishWebProjects: true
     arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
-    zipAfterPublish: True
+# 04/03/2022 07:16 am - SSN - Deactivate
+# Change WEBSITE_RUN_FROM_PACKAGE in app settings to 0. Currently at 1.
+    # zipAfterPublish: True
   enabled: true
   
 # 04/03/2022 05:14 am - SSN - Added
