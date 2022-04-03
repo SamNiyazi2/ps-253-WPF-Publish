@@ -1,0 +1,56 @@
+
+# 04/02/2022 08:25 am - SSN - 
+
+#FROM mcr.microsoft.com/dotnet/core/sdk:3.1 as build 
+#FROM mcr.microsoft.com/dotnet/sdk:3.1 as build 
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 as build 
+
+
+WORKDIR /app
+
+
+COPY ./*.csproj ./
+COPY ./program.cs ./
+COPY ./global.json ./
+
+
+RUN dir . /s 
+
+RUN dotnet restore 
+
+RUN dir . /s 
+
+RUN echo 'donetnet build...'
+
+RUN dotnet build ./PauseApp.csproj 
+
+RUN dir . /s 
+
+RUN echo 'donetnet publish...'
+
+RUN dotnet publish ./PauseApp.csproj -c release -o ./publish
+
+RUN dir . /s 
+
+
+
+
+
+
+
+# FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 as runtime 
+#FROM  mcr.microsoft.com/dotnet/aspnet:5.0 as runtime 
+FROM  mcr.microsoft.com/dotnet/core/aspnet:3.1 as runtime 
+
+WORKDIR /app
+ 
+RUN DIR . /S  
+
+
+COPY --from=build /app/publish /app
+ 
+RUN DIR . /S   
+
+
+ENTRYPOINT ["dotnet","./app/PauseApp.dll"]
+

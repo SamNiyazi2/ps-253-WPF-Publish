@@ -1,0 +1,31 @@
+
+https://docs.microsoft.com/en-us/dotnet/core/docker/build-container?tabs=windows
+
+docker ps -a 
+
+docker start <image-name>
+
+docker stop <image-name>
+
+docker attach --sig-proxy=false <image-name>
+
+docker stop <image-name>
+
+
+Singal run
+docker run -it  --rm <image-name>
+
+ctrl-c
+
+
+
+Change/override entry point
+
+docker run -it --rm --entrypoint "cmd.exe" counter-image
+docker run -it      --entrypoint powershell ps-253-wpf-publish_web
+docker run -it      --entrypoint cmd        ps-253-wpf-publish_pauseapp
+docker ps -a
+docker stop <image-name>
+docker rm <image-name>
+docker rmi <image-nane>:latest
+
