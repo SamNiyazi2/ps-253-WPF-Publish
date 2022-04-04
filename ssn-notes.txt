@@ -1,19 +1,11 @@
 
-<<<<<<< HEAD
-Publish directory is symlinked
-See mklink_publish.cmd
-
-
-
-
-Container option build but site produces hash validation error when running setup.exe.
-=======
+ 
 Works locally only.
 
 Can't deploy Windows container to Azure multi container web app (Linux)
 https://docs.microsoft.com/en-us/azure/app-service/quickstart-multi-container
 
->>>>>>> 0e195d8869fd156ec215ea97b0ee1dd3ea1b17ff
+ 
 
 Build app to be published 
 "C:\Sams_P\PS\creating-flexible-wpf-business-application-screens-playbook\d\02\demos\Start\ps-253-WPF.sample.sln"
