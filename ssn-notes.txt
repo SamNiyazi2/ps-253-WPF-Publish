@@ -1,6 +1,9 @@
 
  
-Works locally only.
+Publish directory is symlinked
+See mklink_publish.cmd
+
+ 
 
 Can't deploy Windows container to Azure multi container web app (Linux)
 https://docs.microsoft.com/en-us/azure/app-service/quickstart-multi-container
