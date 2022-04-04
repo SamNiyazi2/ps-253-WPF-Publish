@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 Publish directory is symlinked
 See mklink_publish.cmd
 
@@ -6,6 +7,13 @@ See mklink_publish.cmd
 
 
 Container option build but site produces hash validation error when running setup.exe.
+=======
+Works locally only.
+
+Can't deploy Windows container to Azure multi container web app (Linux)
+https://docs.microsoft.com/en-us/azure/app-service/quickstart-multi-container
+
+>>>>>>> 0e195d8869fd156ec215ea97b0ee1dd3ea1b17ff
 
 Build app to be published 
 "C:\Sams_P\PS\creating-flexible-wpf-business-application-screens-playbook\d\02\demos\Start\ps-253-WPF.sample.sln"
@@ -22,6 +30,21 @@ ssn-ac-01-docker-compose-up.ps1
 
 
 
+<<<<<<< HEAD
+=======
+c:\app is symlinked to be used in the source project
+
+"C:\Sams_P\PS\creating-flexible-wpf-business-application-screens-playbook\d\02\demos\Start\ps-253-WPF.sample.sln"
+
+in the publish option so it would sync with the deployed application (At current time, Not fully tested ) 
+
+Deployment app:
+
+Visual Studio code: C:\Sams_P\PS\creating-flexible-wpf-business-application-screens-playbook\ps-253-wpf-publish
+
+Deployed to Azure
+
+>>>>>>> 0e195d8869fd156ec215ea97b0ee1dd3ea1b17ff
 
 Containting project:
 
@@ -31,5 +54,10 @@ https://devsitesindex20190127.azurewebsites.net/devsites/details?id=253
 
 
 
+<<<<<<< HEAD
 Can't deploy Windows container to Azure multi container web app (Linux)
 https://docs.microsoft.com/en-us/azure/app-service/quickstart-multi-container
+=======
+
+Adding publishermenu as the final option.
+>>>>>>> 0e195d8869fd156ec215ea97b0ee1dd3ea1b17ff
